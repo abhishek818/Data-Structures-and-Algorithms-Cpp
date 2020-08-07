@@ -8,7 +8,7 @@ public:
         if(n==0)
             return "";
         
-        int dp[n][n];
+        bool dp[n][n];
         int max=1,start=0;
         
         for(int i=0;i<n;i++)
