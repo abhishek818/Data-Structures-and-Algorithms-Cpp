@@ -13,7 +13,7 @@ public:
         for(int i=0;i<n;i++)
         {
             if(nums[i]>mid)
-                return true;
+                return 1;
             else if(nums[i]>left && nums[i]<right)
                 mid=nums[i];
             else
