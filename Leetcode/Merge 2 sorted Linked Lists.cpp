@@ -6,47 +6,32 @@ public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         if(!l1 && !l2)
             return l1;
-        if(!l1 && l2)
+        if(!l1)
             return l2;
-        if(l1 && !l2)
+        if(!l2)
             return l1;
         
-        ListNode *head1=l1,*head2=l2,*merged,*pointer;
-        
-        if(head1->val<=head2->val)
-            {
-                pointer=head1;
-                head1=head1->next;
-            }
-         else
-            {
-               pointer=head2;
-               head2=head2->next;
-            }
+        ListNode *merged,*pointer=new ListNode(0);
         
         merged=pointer;
         
-        while(head1 && head2)
+        while(l1 && l2)
         {
-            if(head1->val<=head2->val)
+            if(l1->val<=l2->val)
             {
-                pointer->next=head1;
-                pointer=pointer->next;
-                head1=head1->next;
+                pointer->next=l1;
+                l1=l1->next;
             }
          else
             {
-                pointer->next=head2;
-                pointer=pointer->next;
-                head2=head2->next;
+                pointer->next=l2;
+                l2=l2->next;
             }
+            pointer=pointer->next;
         }
         
-        if(head1)
-            pointer->next=head1;
-        if(head2)
-            pointer->next=head2;
+            pointer->next=l1?l1:l2;
         
-        return merged;
+        return merged->next;
     }
 };
