@@ -1,7 +1,7 @@
 Question Link: https://leetcode.com/problems/binary-tree-level-order-traversal/
 username: abhishek818
 
-cclass Solution {
+class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> ans;
